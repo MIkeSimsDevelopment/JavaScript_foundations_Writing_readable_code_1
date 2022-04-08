@@ -12,9 +12,10 @@
 function getProductsBySize(products, size) {
   const result = [];
   for (let i = 0; i < products.length; i++) {
-    for (let j = 0; j < products[i].availableSizes.length; j++) {
-      if (products[i].availableSizes[j] === size) {
-        result.push(products[i]);
+    const items = products[i]
+    for (let j = 0; j < items.availableSizes.length; j++) {
+      if (items.availableSizes[j] === size) {
+        result.push(items);
       }
     }
   }
