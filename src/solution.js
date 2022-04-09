@@ -24,31 +24,29 @@ function getProductsBySize(products, size) {
 }
 
 function moreThanThreeProducts(products) {
-  return products.length < 4;
+  return products.length > 3;
 }
 
 function checkForSizeByName(products, name, size) {
   if (!products) return false;
+  
   
   let product = null;
   for (let i = 0; i < products.length; i++) {
     const basket = products[i]
     if (basket.name === name) {
       product = basket;
-    }
+    }    
   }
 
+
+
   if (product) {
-    if (product.availableSizes.includes(size)) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
+    return product.availableSizes.includes(size)
+  } else { 
     return false;
   }
 }
-
 module.exports = {
   getProductsBySize,
   moreThanThreeProducts,
