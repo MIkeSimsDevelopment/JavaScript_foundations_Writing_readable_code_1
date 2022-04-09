@@ -24,18 +24,17 @@ function getProductsBySize(products, size) {
 }
 
 function moreThanThreeProducts(products) {
-  if (products.length < 4) {
-    return false;
-  } else {
-    return true;
-  }
+  return products.length < 4;
 }
 
 function checkForSizeByName(products, name, size) {
+  if (!products) return false;
+  
   let product = null;
   for (let i = 0; i < products.length; i++) {
-    if (products[i].name === name) {
-      product = products[i];
+    const basket = products[i]
+    if (basket.name === name) {
+      product = basket;
     }
   }
 
